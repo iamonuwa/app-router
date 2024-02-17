@@ -17,10 +17,10 @@ export const columns: ColumnDef<AIModel>[] = [
   {
     accessorKey: "model",
     header: ({ column }) => (
-      <DataTableColumnHeader className="w-48" column={column} title="Model" />
+      <DataTableColumnHeader className="w-40" column={column} title="Model" />
     ),
     cell: ({ row }) => (
-      <div className="flex items-center gap-2 w-48">
+      <div className="flex items-center gap-2 w-40">
         {getModelIcon(row.getValue("model"))}
         <span>{getModelName(row.getValue("model"))}</span>
       </div>
@@ -38,7 +38,7 @@ export const columns: ColumnDef<AIModel>[] = [
       />
     ),
     cell: ({ row }) => (
-      <div className="text-center">{row.getValue("version")}</div>
+      <div className="text-center text-sm">v{row.getValue("version")}</div>
     ),
     enableSorting: false,
     enableHiding: false,
@@ -53,7 +53,7 @@ export const columns: ColumnDef<AIModel>[] = [
       />
     ),
     cell: ({ row }) => (
-      <div className="text-center">{row.getValue("license")}</div>
+      <div className="text-center text-sm">{row.getValue("license")}</div>
     ),
     enableSorting: false,
     enableHiding: false,

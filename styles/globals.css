@@ -74,26 +74,4 @@
   body {
     @apply bg-background text-foreground;
   }
-
-  .layout {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: .5rem;
-    grid-template-areas:
-      "content"
-      "asideLeft"
-      "asideRight"
-      "bottom";
-  }
-
-  @media (min-width: 768px) {
-    .layout {
-      grid-template-columns: 1fr 2fr 1fr;
-      grid-template-rows: auto auto;
-      grid-template-areas:
-        "asideLeft content asideRight"
-        "bottom bottom bottom";
-    }
-  }
 }

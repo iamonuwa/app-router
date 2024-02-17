@@ -3,7 +3,6 @@
 import * as ResizablePrimitive from "react-resizable-panels";
 
 import { ComponentProps } from "react";
-import { GripVertical } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const ResizablePanelGroup = ({
@@ -22,7 +21,12 @@ const ResizablePanelGroup = ({
 const ResizablePanel = ResizablePrimitive.Panel;
 
 const Handle = ({ className, ...rest }: ComponentProps<"div">) => {
-  return <div className={cn("hover:h-24 hover:w-1 bg-[#49474F]", className)} {...rest}></div>;
+  return (
+    <div
+      className={cn("hover:h-24 hover:w-1 bg-[#49474F]", className)}
+      {...rest}
+    ></div>
+  );
 };
 
 const ResizableHandle = ({
@@ -40,8 +44,7 @@ const ResizableHandle = ({
     {...props}
   >
     {withHandle && (
-      <div className="z-10 flex items-center justify-center rounded-sm border-4 h-24 hover:bg-[#49474F]">
-      </div>
+      <div className="z-10 flex items-center justify-center rounded-sm border-2 h-24 hover:bg-[#49474F]" />
     )}
   </ResizablePrimitive.PanelResizeHandle>
 );

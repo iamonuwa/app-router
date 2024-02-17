@@ -12,9 +12,21 @@ export const ModelHeader = () => {
         AI Models
       </h4>
       <div className="flex flex-row flex-wrap gap-2 row-span-1 pb-10">
-        <ModelSelector onChange={noop} options={skills} />
-        <ModelSelector onChange={noop} options={skills} />
-        <ModelSelector onChange={noop} options={skills} />
+        <ModelSelector
+          className="w-28 h-10 rounded-full"
+          onChange={noop}
+          options={skills}
+        />
+        <ModelSelector
+          className="w-28 h-10 rounded-full"
+          onChange={noop}
+          options={skills}
+        />
+        <ModelSelector
+          className="w-28 h-10 rounded-full"
+          onChange={noop}
+          options={skills}
+        />
       </div>
     </div>
   );

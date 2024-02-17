@@ -15,19 +15,30 @@ import { TaskWidget } from "@/app/components/widgets/task-widget";
 export default function Page() {
   return (
     <Fragment>
-      <ResizablePanelGroup
-        autoSaveId="persistence"
-        direction="vertical"
-        className="h-screen"
-      >
-        <ResizablePanelGroup className="layout" direction="horizontal">
-          {/* <TaskWidget /> */}
-          {/* <ResizableHandle withHandle /> */}
-          <Content />
-          {/* <ResizableHandle withHandle /> */}
-          {/* <ClockWidget /> */}
-        </ResizablePanelGroup>
-        <GenerateWidget />
+      <ResizablePanelGroup direction="horizontal">
+        <ResizablePanel minSize={20}>
+          <ResizablePanelGroup direction="vertical" className="gap-1">
+            <ResizablePanel
+              style={{
+                flexGrow: 0,
+                flexShrink: 0,
+                flexBasis: "auto",
+                overflow: "auto",
+              }}
+            >
+              <ResizablePanelGroup
+                className="gap-1"
+                direction="horizontal"
+              >
+                <TaskWidget />
+                <Content />
+                <ClockWidget />
+              </ResizablePanelGroup>
+            </ResizablePanel>
+            <ResizableHandle withHandle />
+            <GenerateWidget />
+          </ResizablePanelGroup>
+        </ResizablePanel>
       </ResizablePanelGroup>
     </Fragment>
   );

@@ -14,7 +14,7 @@ const modelAtom = atom<AIModel[]>([
     model: "tensorflow",
     version: "1.1",
     license: "MIT",
-    contributors: ["john", "bob", "jane", "alice"],
+    contributors: ["john", "bob"],
     rating: 3,
   },
   {

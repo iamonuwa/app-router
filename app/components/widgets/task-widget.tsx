@@ -32,14 +32,15 @@ export const TaskWidget = () => {
   return (
     <ResizablePanel
       minSize={15}
-      className="grid grid-cols-1 gap-8 asideLeft bg-[#26252A] rounded-md p-4"
+      maxSize={20}
+      className="hidden md:flex flex-col gap-8 asideLeft bg-[#26252A] rounded-md p-4"
     >
-      <h4 className="row-span-1 text-2xl font-semibold tracking-tight text-foreground">
+      <h4 className="text-2xl font-semibold tracking-tight text-foreground">
         Today’s Task
       </h4>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
-          <ul className="grid grid-cols-1 gap-3">
+          <ul className="space-y-3">
             {tasks.map((task, index) => (
               <li key={index}>
                 <FormField

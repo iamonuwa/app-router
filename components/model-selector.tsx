@@ -1,4 +1,8 @@
-import React, { useState } from "react";
+import React, {
+  ComponentProps,
+  ComponentPropsWithoutRef,
+  useState,
+} from "react";
 import {
   Select,
   SelectContent,
@@ -7,17 +11,22 @@ import {
   SelectValue,
 } from "./ui/select";
 
+import { SelectTriggerProps } from "@radix-ui/react-select";
+import { cn } from "@/lib/utils";
+
 // Assuming Option type remains the same as previously defined
 type Option = string | number | { value: string | number; label: string };
 
-type ModelSelectorProps = {
+type ModelSelectorProps = ComponentPropsWithoutRef<typeof SelectTrigger> & {
   options: Option[];
   onChange: (value: string | number) => void; // Callback function to handle change
 };
 
 export const ModelSelector: React.FC<ModelSelectorProps> = ({
   options,
+  className,
   onChange,
+  ...rest
 }) => {
   const [selectedValue, setSelectedValue] = useState<
     string | number | undefined
@@ -36,7 +45,7 @@ export const ModelSelector: React.FC<ModelSelectorProps> = ({
 
   return (
     <Select onValueChange={handleSelectChange} value={String(selectedValue)}>
-      <SelectTrigger className="w-28 h-10 rounded-full">
+      <SelectTrigger className={cn(className)} {...rest}>
         <SelectValue placeholder="Model" />
       </SelectTrigger>
       <SelectContent>

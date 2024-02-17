@@ -36,7 +36,7 @@ export const Rating: FC<Props> = ({ count, onRatingChange }) => {
               checked={count === value}
             />
             <StarIcon
-              className={`w-5 h-5 ${
+              className={`w-4 h-4 ${
                 count >= value
                   ? "fill-primary"
                   : "fill-muted stroke-muted-foreground"
