@@ -1,3 +1,4 @@
+import { ClockWidget as Clock } from "@/components/clock";
 import { ResizablePanel } from "@/components/ui/resizable";
 
 export const ClockWidget = () => {
@@ -5,9 +6,9 @@ export const ClockWidget = () => {
     <ResizablePanel
       minSize={10}
       maxSize={20}
-      className="hidden md:flex flex-none flex-col asideRight rounded-md p-4 bg-[#201F23]"
+      className="hidden md:flex items-center justify-center flex-none flex-col asideRight rounded-md p-4 bg-clock-banner bg-cover bg-center bg-no-repeat"
     >
-      <p className="text-foreground">Clock Widget</p>
+      <Clock />
     </ResizablePanel>
   );
 };

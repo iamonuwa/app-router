@@ -28,11 +28,11 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
-          <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">{children}</div>
+          <div className="mx-auto max-w-7xl p-6">{children}</div>
         </ThemeProvider>
       </body>
     </html>

@@ -15,7 +15,7 @@ import { TaskWidget } from "@/app/components/widgets/task-widget";
 export default function Page() {
   return (
     <Fragment>
-      <ResizablePanelGroup direction="horizontal">
+      <ResizablePanelGroup className="bg-wrapper p-4 rounded-xl shadow-xl" direction="horizontal">
         <ResizablePanel minSize={20}>
           <ResizablePanelGroup direction="vertical" className="gap-1">
             <ResizablePanel
@@ -26,10 +26,7 @@ export default function Page() {
                 overflow: "auto",
               }}
             >
-              <ResizablePanelGroup
-                className="gap-1"
-                direction="horizontal"
-              >
+              <ResizablePanelGroup className="gap-1" direction="horizontal">
                 <TaskWidget />
                 <Content />
                 <ClockWidget />

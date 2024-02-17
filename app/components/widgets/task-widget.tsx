@@ -14,7 +14,6 @@ import { ResizablePanel } from "@/components/ui/resizable";
 import { cn } from "@/lib/utils";
 import { tasks } from "@/data/tasks";
 import { useForm } from "react-hook-form";
-import { useTasks } from "@/hooks/use-tasks";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 export const TaskWidget = () => {
@@ -33,7 +32,7 @@ export const TaskWidget = () => {
     <ResizablePanel
       minSize={15}
       maxSize={20}
-      className="hidden md:flex flex-col gap-8 asideLeft bg-[#26252A] rounded-md p-4"
+      className="hidden md:flex flex-col gap-8 asideLeft bg-secondary rounded-md p-4"
     >
       <h4 className="text-2xl font-semibold tracking-tight text-foreground">
         Today’s Task
@@ -72,9 +71,8 @@ export const TaskWidget = () => {
                         </FormControl>
                         <FormLabel
                           className={cn("text-sm font-normal", {
-                            "line-through": field.value?.some(
-                              (value) => value === task
-                            ),
+                            "line-through decoration-2 text-primary":
+                              field.value?.some((value) => value === task),
                           })}
                         >
                           {task}

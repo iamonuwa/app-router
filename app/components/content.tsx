@@ -12,7 +12,7 @@ export const Content = () => {
     <Fragment>
       <ResizableHandle className="hidden md:flex" withHandle />
       <ResizablePanel className="content flex-auto mx-auto">
-        <div className="w-full p-1 bg-[#26252A] rounded-md">
+        <div className="w-full p-1 bg-secondary rounded-md">
           <ModelHeader />
           <DataTable data={models} columns={columns} />
         </div>

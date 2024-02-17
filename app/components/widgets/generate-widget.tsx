@@ -1,5 +1,8 @@
+import { AIGenerateDialog } from "@/components/generate-dialog";
 import { Button } from "@/components/ui/button";
 import { IconButton } from "@/components/icon-button";
+import Image from "next/image";
+import { ImageOverlay } from "@/components/image-overlay";
 import { ModelSelector } from "@/components/model-selector";
 import { ResizablePanel } from "@/components/ui/resizable";
 import { StarsIcon } from "lucide-react";
@@ -20,12 +23,12 @@ export const GenerateWidget = () => {
       }}
     >
       <div className="flex h-full justify-between items-center">
-        <div className=""></div>
+        <div className="h-full">
+          <ImageOverlay src="/boy-in-water.png" overlayColor="hsla(257, 97%, 58%, 0.38)" />
+        </div>
         <div className="flex h-full flex-col items-center justify-between">
           <ModelSelector className="w-32" options={skills} onChange={noop} />
-          <IconButton>
-            <StarsIcon size={24} />
-          </IconButton>
+          <AIGenerateDialog />
         </div>
       </div>
     </ResizablePanel>

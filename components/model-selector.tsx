@@ -49,7 +49,7 @@ export const ModelSelector: React.FC<ModelSelectorProps> = ({
         <SelectValue placeholder="Model" />
       </SelectTrigger>
       <SelectContent>
-        {options.map((option, index) => {
+        {options.map((option) => {
           const key = typeof option === "object" ? option.value : option;
           const value = isOptionObject(option) ? option.value : option;
           const label = isOptionObject(option) ? option.label : option;
