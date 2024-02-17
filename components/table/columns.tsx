@@ -8,8 +8,8 @@ import { AIModel } from "@/models/ai-model";
 import { ColumnDef } from "@tanstack/react-table";
 import { DataTableColumnHeader } from "./data-table-column-header";
 import { Rating } from "../rating";
-import { getModelIcon } from "@/lib/modelIcon";
-import { getModelName } from "@/lib/modelName";
+import { getModelIcon } from "@/lib/getModelIcon";
+import { getModelName } from "@/lib/getModelName";
 
 const noop = () => {};
 
